@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\TaskController;
+use App\Http\Controllers\TaksController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -19,17 +18,20 @@ use Inertia\Inertia;
 |
 */
 
-Route::redirect('/', 'dashboard');
+// Route::redirect('/', 'dashboard');
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    // return Inertia::render('Dashboard');
+    return "code";
+});
+
+
 
 Route::middleware(['auth','verified'])->group(function(){
      Route::get('/dashboard', fn() => Inertia::render('Dashboard'))->name('dashboard');
-     Route::get('project', ProjectController::class);
-     Route::get('task', Task::class);
-     Route::get('user', UserController::class);
+     Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
+     Route::get('/task', [TaksController::class, 'index'])->name('task.index');
+     Route::get('/user', [UserController::class, 'index'])->name('user.index');
 });
 
 Route::middleware('auth')->group(function () {
