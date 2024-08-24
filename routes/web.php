@@ -18,11 +18,10 @@ use Inertia\Inertia;
 |
 */
 
-// Route::redirect('/', 'dashboard');
+Route::redirect('/', 'dashboard');
 
 Route::get('/dashboard', function () {
-    // return Inertia::render('Dashboard');
-    return "code";
+    return Inertia::render('Dashboard');
 });
 
 
