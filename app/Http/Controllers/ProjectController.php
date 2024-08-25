@@ -13,7 +13,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Project/Index', [
+            'projects' => Project::all()
+        ]);
     }
 
     /**
