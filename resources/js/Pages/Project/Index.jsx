@@ -4,6 +4,7 @@ import { Head, Link, router} from '@inertiajs/react';
 import {PROJECT_STATUS_CLASS_MAP, PROJECT_STATUS_TEXT_MAP} from "@/Constant";
 import TextInput from "@/Components/TextInput";
 import SelectInput from "@/Components/SelectInput";
+import TableHeading from "@/Components/TableHeading";
 
 export default function Index({auth, projects, queryParams = null}) {
     queryParams = queryParams || {};
@@ -22,6 +23,20 @@ export default function Index({auth, projects, queryParams = null}) {
         searchFieldChanged(name, e.target.value);
     }
 
+    const sortChanged = (name) => {
+        if (name === queryParams.sort_field) {
+            if (queryParams.sort_direction === "asc") {
+                queryParams.sort_direction = "desc";
+            } else {
+                queryParams.sort_direction = "asc";
+            }
+        } else {
+            queryParams.sort_field = name;
+            queryParams.sort_direction = "asc";
+        }
+        router.get(route("project.index"), queryParams);
+    };
+
     return(
         <AuthenticatedLayout
         user={auth.user}
@@ -37,28 +52,64 @@ export default function Index({auth, projects, queryParams = null}) {
                             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
-                                        <th scope="col" className="px-6 py-3"> ID </th>
-                                        <th scope="col" className="px-6 py-3"> Image </th>
-                                        <th scope="col" className="px-6 py-3"> Name </th>
-                                        <th scope="col" className="px-6 py-3"> Status </th>
-                                        <th scope="col" className="px-6 py-3"> Created Date </th>
-                                        <th scope="col" className="px-6 py-3">  Due Date </th>
-                                        <th scope="col" className="px-6 py-3"> Created By </th>
-                                        <th scope="col" className="px-6 py-3 text-write"> Actions </th>
+                                       <TableHeading
+                                            name="id"
+                                            sort_field={ queryParams.sort_field}
+                                            sort_direction={ queryParams.sort_direction}
+                                            sortChanged={sortChanged}
+                                        >
+                                            ID
+                                        </TableHeading>
+                                        <th className="px-6 py-3"> Image </th>
+                                        <TableHeading
+                                            name="name"
+                                            sort_field={queryParams.sort_field }
+                                            sort_direction={ queryParams.sort_direction}
+                                            sortChanged={sortChanged}
+                                            >
+                                               Name
+                                        </TableHeading>
+                                        <TableHeading
+                                            name="status"
+                                            sort_field={ queryParams.sort_field }
+                                            sort_direction={queryParams.sort_direction }
+                                            sortChanged={sortChanged}
+                                           >
+                                             Status
+                                        </TableHeading>
+                                        <TableHeading
+                                            name="created_at"
+                                            sort_field={ queryParams.sort_field  }
+                                            sort_direction={ queryParams.sort_direction }
+                                            sortChanged={sortChanged}
+                                        >
+                                            Created Date
+                                        </TableHeading>
+                                        <TableHeading
+                                            name="due_date"
+                                            sort_field={ queryParams.sort_field }
+                                            sort_direction={queryParams.sort_direction }
+                                            sortChanged={sortChanged}
+                                        >
+                                            Due Date
+                                        </TableHeading>
+                                    
+                                        <th className="px-6 py-3"> Created By </th>
+                                        <th className="px-6 py-3 text-write"> Actions </th>
                                     </tr>
                                 </thead>
                                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
-                                        <th scope="col" className="px-6 py-3"> </th>
-                                        <th scope="col" className="px-6 py-3"> </th>
-                                        <th scope="col" className="px-6 py-3">
+                                        <th className="px-6 py-3"> </th>
+                                        <th className="px-6 py-3"> </th>
+                                        <th className="px-6 py-3">
                                             <TextInput className="w-full"
                                             placeholder="Project Name"
                                             defaultValue={queryParams.name}
                                             onBlur= {e => searchFieldChanged('name', e.target.value)}
                                             onKeyPress = {e => onKeyPress('name', e)}/>
                                         </th>
-                                        <th scope="col" className="px-6 py-3">
+                                        <th className="px-6 py-3">
                                             <SelectInput className="w-full"
                                             defaultValue={queryParams.status}
                                              onChange= {e => searchFieldChanged('status', e.target.value)}
@@ -69,10 +120,10 @@ export default function Index({auth, projects, queryParams = null}) {
                                               <option value="completed"> Completed </option>
                                             </SelectInput>
                                         </th>
-                                        <th scope="col" className="px-6 py-3"> </th>
-                                        <th scope="col" className="px-6 py-3"> </th>
-                                        <th scope="col" className="px-6 py-3"> </th>
-                                        <th scope="col" className="px-6 py-3"> </th>
+                                        <th className="px-6 py-3"> </th>
+                                        <th className="px-6 py-3"> </th>
+                                        <th className="px-6 py-3"> </th>
+                                        <th className="px-6 py-3"> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
