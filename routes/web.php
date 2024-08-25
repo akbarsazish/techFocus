@@ -24,8 +24,6 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 });
 
-
-
 Route::middleware(['auth','verified'])->group(function(){
      Route::get('/dashboard', fn() => Inertia::render('Dashboard'))->name('dashboard');
      Route::get('/project', [ProjectController::class, 'index'])->name('project.index');

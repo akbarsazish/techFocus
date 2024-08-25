@@ -1,6 +1,6 @@
 import Pagination from "@/Components/Pagination";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, router} from '@inertiajs/react';
 import {PROJECT_STATUS_CLASS_MAP, PROJECT_STATUS_TEXT_MAP} from "@/Constant";
 import TextInput from "@/Components/TextInput";
 import SelectInput from "@/Components/SelectInput";
@@ -13,6 +13,8 @@ export default function Index({auth, projects, queryParams = null}) {
         }else{
            delete queryParams[name]
         }
+
+        router.get(route('project.index'), queryParams);
     }
 
     const onKeyPress = (name, e) => {
@@ -50,12 +52,15 @@ export default function Index({auth, projects, queryParams = null}) {
                                         <th scope="col" className="px-6 py-3"> </th>
                                         <th scope="col" className="px-6 py-3"> </th>
                                         <th scope="col" className="px-6 py-3">
-                                            <TextInput className="w-full" placeholder="Project Name"
+                                            <TextInput className="w-full"
+                                            placeholder="Project Name"
+                                            defaultValue={queryParams.name}
                                             onBlur= {e => searchFieldChanged('name', e.target.value)}
                                             onKeyPress = {e => onKeyPress('name', e)}/>
                                         </th>
                                         <th scope="col" className="px-6 py-3">
-                                            <SelectInput className="w-full" 
+                                            <SelectInput className="w-full"
+                                            defaultValue={queryParams.status}
                                              onChange= {e => searchFieldChanged('status', e.target.value)}
                                             >
                                               <option value=""> Select Status </option>
