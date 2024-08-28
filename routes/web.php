@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaksController;
 use App\Http\Controllers\UserController;
@@ -27,9 +28,14 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth','verified'])->group(function(){
      Route::get('/dashboard', fn() => Inertia::render('Dashboard'))->name('dashboard');
      Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
-     Route::get('/project/edite/{project}', [ProjectController::class, 'edit'])->name('project.edit');
-     Route::post( '/project/destroy/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
+     Route::get('/project/show/{project}', [ProjectController::class, 'show'])->name('project.show');
+     Route::get('/project/edit/{project}', [ProjectController::class, 'edit'])->name('project.edit');
+     Route::post('/project/destroy/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
+
      Route::get('/task', [TaksController::class, 'index'])->name('task.index');
+     Route::get('/task/edite/{project}', [TaksController::class, 'edit'])->name('task.edit');
+     Route::post( '/task/destroy/{task}', [TaksController::class, 'destroy'])->name('task.destroy');
+
      Route::get('/user', [UserController::class, 'index'])->name('user.index');
 });
 
