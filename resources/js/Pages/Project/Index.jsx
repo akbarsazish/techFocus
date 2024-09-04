@@ -6,7 +6,7 @@ import TextInput from "@/Components/TextInput";
 import SelectInput from "@/Components/SelectInput";
 import TableHeading from "@/Components/TableHeading";
 
-export default function Index({auth, projects, queryParams = null}) {
+export default function Index({auth, projects, queryParams = null, success}) {
     queryParams = queryParams || {};
     const searchFieldChanged = (name, value)=> {
         if(value){
@@ -37,6 +37,13 @@ export default function Index({auth, projects, queryParams = null}) {
         router.get(route("project.index"), queryParams);
     };
 
+    const deleteProject = (project) => {
+        if (!window.confirm("Are you sure you want to delete the project?")) {
+          return;
+        }
+        router.delete(route("project.destroy", project.id));
+      };
+
     return(
         <AuthenticatedLayout
         user={auth.user}
@@ -48,9 +55,13 @@ export default function Index({auth, projects, queryParams = null}) {
         }
       >
         <Head title="Projects" />
-
         <div className="py-12">
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            {success && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                    <span className="block sm:inline">{success}</span>
+                </div>
+            )}
                 <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div className="p-6 text-gray-900 dark:text-gray-100">
                         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -163,7 +174,12 @@ export default function Index({auth, projects, queryParams = null}) {
                                             </td>
                                             <td className="px-6 py-4 text-nowrap">
                                                <Link href={route('project.edit', project.id)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline mx-2"> Edit </Link>
-                                               <Link href={route('project.destroy', project.id)} className="font-medium text-red-600 dark:text-red-500 hover:underline mx-2"> Delete </Link>
+                                               <button
+                                                    onClick={(e) => deleteProject(project)}
+                                                    className="font-medium text-red-600 dark:text-red-500 hover:underline mx-1"
+                                                >
+                                                       Delete
+                                                </button>
                                             </td>
                                         </tr>
                                     ))}
