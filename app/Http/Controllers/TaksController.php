@@ -15,6 +15,7 @@ class TaksController extends Controller
     public function index()
     {
         $query = Task::query();
+        
         $sortField = request("sort_field", "created_at");
         $sortDirection = request("sort_description", "desc");
         if(request('name')) {

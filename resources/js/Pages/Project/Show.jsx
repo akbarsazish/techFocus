@@ -88,7 +88,7 @@ export default function Show({ auth, project, tasks, queryParams}) {
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
                            <h1> Table goes here </h1>
-                           <TaskTable tasks={tasks} queryParams={queryParams} />
+                           <TaskTable tasks={tasks} queryParams={queryParams} hideProjectColumn={true} />
                         </div>
                     </div>
                 </div>

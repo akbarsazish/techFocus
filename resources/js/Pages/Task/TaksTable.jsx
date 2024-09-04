@@ -6,7 +6,7 @@ import {Link, router} from '@inertiajs/react';
 import Pagination from "@/Components/Pagination";
 
 
-export default function TaskTable({tasks, queryParams = null}) {
+export default function TaskTable({tasks, queryParams = null, hideProjectColumn = false}) {
     queryParams = queryParams || {};
 
     const searchFieldChanged = (name, value)=> {
@@ -52,6 +52,7 @@ export default function TaskTable({tasks, queryParams = null}) {
                             ID
                         </TableHeading>
                         <th className="px-6 py-3"> Image </th>
+                        {!hideProjectColumn && ( <th className="px-6 py-3"> Project Name </th> )}
                         <TableHeading
                             name="name"
                             sort_field={queryParams.sort_field }
@@ -126,6 +127,7 @@ export default function TaskTable({tasks, queryParams = null}) {
                             <td className="px-6 py-4">
                                 <img src={task.image_path} alt="Task Image" className="w-10 h-10 rounded-full" />
                             </td>
+                            {!hideProjectColumn && ( <td className="px-6 py-4">  {task.project.name}  </td>)}
                             <td className="px-6 py-4">
                                 {task.name}
                             </td>

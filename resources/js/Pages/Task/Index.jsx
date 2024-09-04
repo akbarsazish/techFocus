@@ -5,7 +5,6 @@ import { Head} from '@inertiajs/react';
 import TaskTable from "./TaksTable";
 
 export default function Index({auth, tasks, queryParams = null}) {
-    queryParams = queryParams || {};
  
     return(
         <AuthenticatedLayout

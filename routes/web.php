@@ -31,6 +31,8 @@ Route::middleware(['auth','verified'])->group(function(){
      Route::get('/project/show/{project}', [ProjectController::class, 'show'])->name('project.show');
      Route::get('/project/edit/{project}', [ProjectController::class, 'edit'])->name('project.edit');
      Route::post('/project/destroy/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
+     Route::get('/project/create', [ProjectController::class, 'create'])->name('project.create');
+     Route::post('/project/store', [ProjectController::class, 'store'])->name('project.store');
 
      Route::get('/task', [TaksController::class, 'index'])->name('task.index');
      Route::get('/task/edite/{project}', [TaksController::class, 'edit'])->name('task.edit');
