@@ -21,7 +21,7 @@ export default function Dashboard({ auth }) {
       data: [
         {
           date: new Date(),
-          stars: 10234230,
+          stars: 102342,
         },
 
       ],
@@ -36,14 +36,23 @@ export default function Dashboard({ auth }) {
 
       ],
     },
+    {
+      label: 'React Hooks',
+      data: [
+        {
+          date: new Date(),
+          stars: 34930,
+        },
+
+      ],
+    },
   ];
 
   const primaryAxis = React.useMemo(() => ({
     getValue: (datum) => datum.date,
   }), []);
 
-  const secondaryAxes = React.useMemo(() => [
-    {
+  const secondaryAxes = React.useMemo(() => [{
       getValue: (datum) => datum.stars,
       elementType: 'bar',
     },
