@@ -5,12 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class Task extends Model
 {
     use HasFactory;
 
-    // Define the relationship to the Project model
+    protected $fillable = [
+        'name',
+        'description',
+        'image_path',
+        'status',
+        'priority',
+        'due_date',
+        'assigned_user_id',
+        'created_by',
+        'updated_by',
+        'project_id',
+    ];
+
     public function project()
     {
         return $this->belongsTo(Project::class);

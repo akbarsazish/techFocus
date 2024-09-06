@@ -1,6 +1,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link } from "@inertiajs/react";
-import TaskTable from "../Task/TaksTable";
+import TaskTable from "../Task/TasksTable";
+
 import {
     PROJECT_STATUS_CLASS_MAP,
     PROJECT_STATUS_TEXT_MAP,
