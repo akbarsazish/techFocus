@@ -29,5 +29,6 @@ class StoreProjectRequest extends FormRequest
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
             'due_date' => ['required', 'date'],          
         ];
+        
     }
 }

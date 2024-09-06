@@ -39,7 +39,7 @@ Route::middleware(['auth','verified'])->group(function(){
      Route::get('/task/edite/{project}', [TaksController::class, 'edit'])->name('task.edit');
      Route::post( '/task/destroy/{task}', [TaksController::class, 'destroy'])->name('task.destroy');
 
-     Route::get('/user', [UserController::class, 'index'])->name('user.index');
+     Route::resource('user', UserController::class);
 });
 
 Route::middleware('auth')->group(function () {
