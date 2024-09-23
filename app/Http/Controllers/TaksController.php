@@ -86,7 +86,7 @@ class TaksController extends Controller
     {
         return inertia('Task/Show', [
             'task' => new TaskResource($task),
-            'success' => session('success'),
+            'success' => session('success'),    
         ]);
     }
 
