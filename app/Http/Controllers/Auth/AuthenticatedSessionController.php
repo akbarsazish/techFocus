@@ -19,12 +19,6 @@ class AuthenticatedSessionController extends Controller
      */
 
 
-    public function home()
-    {
-        return inertia('Front/Home');
-    }
-
-
     public function create(): Response
     {
         return Inertia::render('Auth/Login', [

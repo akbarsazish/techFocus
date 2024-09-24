@@ -1,10 +1,7 @@
-import GuestLayout from '@/Layouts/GuestLayout';
-import { Head } from '@inertiajs/react';
+
+import Header from './Partial/Header';
 export default function Home() {    
   return ( 
-    <GuestLayout>
-       <Head title="Email Verification" />
-        <h1>for front layout </h1>
-    </GuestLayout> 
+    <Header />
   )
 }
