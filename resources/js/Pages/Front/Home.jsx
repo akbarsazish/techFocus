@@ -1,5 +1,7 @@
 
 import Header from './Partial/Header';
+import Footer from './Partial/Footer';
+
 export default function Home() {    
   return ( 
     <>
@@ -41,6 +43,7 @@ export default function Home() {
             </div>
           </div>
       </div>
+      <Footer/>
     </>
   )
 }
