@@ -6,15 +6,16 @@ export default function Header() {
 
     const toggleMenu = (menu) => {
         setOpenMenu(openMenu === menu ? null : menu);
+        alert("love js")
     };
 
   return (
-    <nav className="bg-gray-800">
+    <nav className="primary">
         <div className="mx-w-full px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span className="absolute -inset-0.5"></span>
+                        <span className="absolute -inset-0.5" onClick={() => toggleMenu('mobileMenu')}></span>
                         <span className="sr-only">Open main menu</span>
                         
                         <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
@@ -37,7 +38,7 @@ export default function Header() {
                            
                             <div className="relative inline-block text-left">
                                 <div>
-                                    <button type="button" onClick={() => toggleMenu('services')} className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                    <button type="button" onMouseEnter={() => toggleMenu('services')} className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
                                      Services
                                     <svg className="-mr-1 h-5 w-5 text-gray-400 inline-block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
@@ -58,13 +59,14 @@ export default function Header() {
 
                             <div className="relative inline-block text-left">
                                 <div>
-                                    <button type="button" onClick={() => toggleMenu('contact')}  className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                    <button type="button" onMouseEnter={() => toggleMenu('contact')}  className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
                                     Contact Us
                                     <svg className="-mr-1 h-5 w-5 text-gray-400 inline-block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
                                     </svg>
                                     </button>
                                 </div>
+
                             {openMenu === 'contact' && (
                                 <div className="absolute left-0 z-10 mt-2 w-40 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
                                     <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-0"> Support </a>
@@ -91,14 +93,53 @@ export default function Header() {
             </div>
         </div>
 
-        <div className="sm:hidden" id="mobile-menu">
+        {openMenu === 'mobileMenu' && (
+         <div className="sm:hidden" id="mobile-menu">
             <div className="space-y-1 px-2 pb-3 pt-2">
                 <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
-                <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                <div className="relative inline-block text-left">
+                    <div>
+                        <button type="button" onMouseEnter={() => toggleMenu('services')} className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                            Services
+                        <svg className="-mr-1 h-5 w-5 text-gray-400 inline-block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                        </svg>
+                        </button>
+                    </div>
+
+                    {openMenu === 'services' && (
+                    <div id="servicesItems" className="absolute left-0 z-10 mt-2 w-40 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
+                        <div className="py-1" role="none">
+                            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-0"> Web Application </a>
+                            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-1"> Hosting </a>
+                            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-2">Marketing</a>
+                        </div>
+                    </div>
+                    )}
+                </div>
+                <div className="relative block text-left">
+                        <div>
+                            <button type="button" onMouseEnter={() => toggleMenu('contact')}  className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                              Contact Us
+                            <svg className="-mr-1 h-5 w-5 text-gray-400 inline-block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                            </svg>
+                            </button>
+                        </div>
+                    {openMenu === 'contact' && (
+                        <div className="absolute left-0 z-10 mt-2 w-40 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
+                            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-0"> Support </a>
+                            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-1"> Work With Us</a>
+                            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-2">Contact Us</a>
+                        </div>
+                    )}
+                </div>
+                <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-white">Team</a>
+                <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-white">About</a>
+                <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-white">Blog</a>
             </div>
         </div>
+        )}
     </nav>
   );
 }

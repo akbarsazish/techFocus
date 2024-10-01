@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.primary{
+    background-color: #050816;
+}
+
+.secondary {
+    background-color: #aaa6c3;
+}
+
+.tertiary{
+    background-color:#151030;
+}
+
+.hoverColor {
+    background-color: #0000;
+}
