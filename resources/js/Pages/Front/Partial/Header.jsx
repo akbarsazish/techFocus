@@ -6,7 +6,6 @@ export default function Header() {
 
     const toggleMenu = (menu) => {
         setOpenMenu(openMenu === menu ? null : menu);
-        alert("love js")
     };
 
   return (
@@ -99,7 +98,7 @@ export default function Header() {
                 <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
                 <div className="relative inline-block text-left">
                     <div>
-                        <button type="button" onMouseEnter={() => toggleMenu('services')} className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                        <button type="button" onClick={() => toggleMenu('services')} className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
                             Services
                         <svg className="-mr-1 h-5 w-5 text-gray-400 inline-block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
@@ -119,7 +118,7 @@ export default function Header() {
                 </div>
                 <div className="relative block text-left">
                         <div>
-                            <button type="button" onMouseEnter={() => toggleMenu('contact')}  className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                            <button type="button" onClick={() => toggleMenu('contact')}  className="rounded-md px-3 py-2 text-sm font-medium text-white " id="menu-button" aria-expanded="true" aria-haspopup="true">
                               Contact Us
                             <svg className="-mr-1 h-5 w-5 text-gray-400 inline-block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />

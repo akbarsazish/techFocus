@@ -4,7 +4,7 @@ export default function Footer(){
     return(
         <div className="primary">
              <div className="section p-20">
-                <div className="grid grid-cols-3 gap-4 text-center text-white">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center text-white">
                     <div className="text-center">
                         <h4 className="font-bold text-xl"> services </h4>
                         <span className="mt-5">
