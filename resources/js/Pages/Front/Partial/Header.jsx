@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import { Link } from '@inertiajs/react';
+import Home from '../Home';
 
 export default function Header() {
     const [openMenu, setOpenMenu] = useState(null); 
@@ -34,6 +36,7 @@ export default function Header() {
                     <div className="hidden sm:ml-6 sm:block">
                         <div className="flex space-x-4">
                             <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
+                            <Link to="/ali" element={<Home />} className="rounded-md px-3 py-2 text-sm font-medium text-white"> test </Link>
                            
                             <div className="relative inline-block text-left">
                                 <div>
@@ -48,6 +51,7 @@ export default function Header() {
                                 {openMenu === 'services' && (
                                 <div id="servicesItems" className="absolute left-0 z-10 mt-2 w-40 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
                                     <div className="py-1" role="none">
+                                        
                                         <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-0"> Web Application </a>
                                         <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-1"> Hosting </a>
                                         <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="menu-item-2">Marketing</a>

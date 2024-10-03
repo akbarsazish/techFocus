@@ -40,7 +40,7 @@ export default function Home() {
                         <h2 className="font-bold text-2xl mt-5">Marketing</h2>
                         <img className="h-auto max-w-full mx-auto p-4" src="/images/marketing.png" alt="marketing"/>
                     </div>
-                    <div className="primary rounded h-56 -mt-10 hover:bg-purple-700">
+                    <div className="primary rounded h-56 -mt-10 mt-0 sm:-mt-10 hover:bg-purple-700">
                         <h2 className="font-bold text-2xl mt-5">SEO</h2>
                         <img className="h-auto max-w-full mx-auto p-4" src="/images/ceo.png" alt="ceo"/>
                     </div>
