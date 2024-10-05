@@ -50,15 +50,11 @@ export default function Header() {
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
           <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
-                  alt=""
-                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                  className="h-8 w-auto"
-                />
+                  <img alt="logo" src="./images/techfocus.png" className="h-8 w-auto" />
               </a>
               <button
                 type="button"
@@ -73,8 +69,7 @@ export default function Header() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <a
-                      key={item.name}
+                    <a key={item.name}
                       href={item.href}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
                     >
@@ -114,7 +109,7 @@ export default function Header() {
             <h1 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Code your dreams into reality.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-white">
             techFocus designs customized portals and web-based software for employers, prioritizing an attractive user interface, high security, fast performance, dynamic management, and search engine optimization.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
