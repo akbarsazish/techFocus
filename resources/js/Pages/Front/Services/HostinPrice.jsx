@@ -53,14 +53,14 @@ export default function HostingPrice() {
           className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
         />
       </div>
+
       <div className="mx-auto max-w-2xl text-center lg:max-w-4xl">
         <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-          The right price for you, whoever you are
+          Select your hosting plan
         </p>
       </div>
       <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-white">
-        Qui iusto aut est earum eos quae. Eligendi est at nam aliquid ad quo reprehenderit in aliquid fugiat dolorum
-        voluptatibus.
+         Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document.
       </p>
       <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
         {tiers.map((tier, tierIdx) => (

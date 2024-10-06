@@ -8,7 +8,7 @@ export default function Home() {
   return ( 
     <>
       <Header />
-      <ServicesFeature /> <hr />
+      <ServicesFeature />
       <HostingPrice />
       <Footer/>
     </>

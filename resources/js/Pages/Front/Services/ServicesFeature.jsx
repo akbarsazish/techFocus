@@ -38,7 +38,7 @@ const features = [
 
 export default function ServicesFeature() {
   return (
-    <div className="tertiary py-12 sm:py-22">
+    <div className="tertiary py-12 sm:py-22 border-b border-black border-solid">
         <div className="max-w-auto">
             <div className="section p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
                  <div className="mb-12">
