@@ -1,35 +1,38 @@
-import { ArrowPathIcon, BeakerIcon , FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/solid'
+
+import {FaGlobe, FaMobile, FaSearch } from 'react-icons/fa';
+import { FcAdvertising } from "react-icons/fc";
+import { SiHostinger } from "react-icons/si";
 
 const features = [
   {
     name: 'Web Development',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: BeakerIcon ,
+      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    icon: FaGlobe,
   },
   {
     name: 'Mobile Applications',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    icon: FaMobile,
   },
   {
     name: 'Hosting',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: ArrowPathIcon,
+      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    icon: SiHostinger,
   },
   {
     name: 'Marketing',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: FingerPrintIcon,
+      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    icon: FcAdvertising,
   },
   {
     name: 'CEO',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: FingerPrintIcon,
+      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    icon: FaSearch,
   },
 ]
 
