@@ -1,3 +1,4 @@
+import FrontLayout from '@/Layouts/FrontLayout';
 import { CheckIcon } from '@heroicons/react/20/solid'
 
 const tiers = [
@@ -28,8 +29,8 @@ const tiers = [
     featured: true,
   },
   {
-    name: 'Hobby',
-    id: 'tier-hobby',
+    name: 'Hobby1',
+    id: 'tier-hobby1',
     href: '#',
     priceMonthly: '$29',
     description: "The perfect plan if you're just getting started with our product.",
@@ -44,7 +45,8 @@ function classNames(...classes) {
 
 export default function HostingPrice() {
   return (
-    <div className="relative isolate tertiary px-6 py-24 sm:py-32 lg:px-8">
+    <FrontLayout>
+    <div className="relative isolate px-6 py-24 sm:py-32 lg:px-8">
       <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
         <div style={{
             clipPath:
@@ -99,8 +101,7 @@ export default function HostingPrice() {
             <p className={classNames(tier.featured ? 'text-gray-300' : 'text-gray-600', 'mt-6 text-base leading-7')}>
               {tier.description}
             </p>
-            <ul
-              role="list"
+            <ul role="list"
               className={classNames(
                 tier.featured ? 'text-gray-300' : 'text-gray-600',
                 'mt-8 space-y-3 text-sm leading-6 sm:mt-10',
@@ -108,8 +109,7 @@ export default function HostingPrice() {
             >
               {tier.features.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
-                  <CheckIcon
-                    aria-hidden="true"
+                  <CheckIcon aria-hidden="true"
                     className={classNames(tier.featured ? 'text-indigo-400' : 'text-indigo-600', 'h-6 w-5 flex-none')}
                   />
                   {feature}
@@ -132,5 +132,6 @@ export default function HostingPrice() {
         ))}
       </div>
     </div>
+    </FrontLayout>
   )
 }

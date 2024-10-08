@@ -10,8 +10,6 @@ use Inertia\Inertia;
 use Inertia\Response;
 
 
-
-
 class LayoutController extends Controller
 {
     public function home()
@@ -19,4 +17,19 @@ class LayoutController extends Controller
         return inertia('Front/Home');
     }
 
+    public function services(){
+        return inertia('Front/Contact');
+    }
+
+    public function about(){
+        return inertia('Front/About');
+    }
+
+    public function contact(){
+        return inertia('Front/Contact');
+    }
+
+    public function blog(){
+        return inertia('Front/Contact');
+    }
 }

@@ -7,7 +7,7 @@ export default function About() {
       <Header />
        <div className="tertiary">
            <div className="max-w-auto">
-                <h1>About Page!</h1>
+              <h1> About Page! </h1>
             </div>
        </div>
        <Footer />

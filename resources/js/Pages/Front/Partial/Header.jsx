@@ -1,22 +1,16 @@
 
-
+import FrontLayout from '@/Layouts/FrontLayout';
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from "@inertiajs/react";
 
-const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Contact', href: '#' },
-  { name: 'Blog', href: '#' },
-]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="primary">
+    <FrontLayout>
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
@@ -36,11 +30,11 @@ export default function Header() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
-                {item.name}
-              </a>
-            ))}
+            <Link href={route("home")} className="text-sm font-semibold leading-6 text-white">  Home </Link> 
+            <Link href={route("services")} className="text-sm font-semibold leading-6 text-white">  Services </Link> 
+            <Link href={route("about")} className="text-sm font-semibold leading-6 text-white">  About </Link> 
+            <Link href={route("contact")} className="text-sm font-semibold leading-6 text-white">  Contact </Link> 
+            <Link href={route("blog")} className="text-sm font-semibold leading-6 text-white">  Blog </Link> 
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-sm font-semibold leading-6 text-white">
@@ -68,18 +62,14 @@ export default function Header() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <a key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
+                   <Link href={route("home")} className="text-sm font-semibold leading-6 text-white">  Home </Link> 
+                   <Link href={route("services")} className="text-sm font-semibold leading-6 text-white">  Services </Link> 
+                   <Link href={route("about")} className="text-sm font-semibold leading-6 text-white">  About </Link> 
+                   <Link href={route("contact")} className="text-sm font-semibold leading-6 text-white">  Contact </Link> 
+                   <Link href={route("blog")} className="text-sm font-semibold leading-6 text-white">  Blog </Link> 
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
+                  <a href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50"
                   >
                     Log in
@@ -92,8 +82,7 @@ export default function Header() {
       </header>
 
       <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div
-          aria-hidden="true"
+        <div aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         >
           <div
@@ -132,6 +121,6 @@ export default function Header() {
           />
         </div>
       </div>
-    </div>
+    </FrontLayout>
   )
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaksController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Front\LayoutController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -44,5 +45,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+Route::get('/home', [LayoutController::class, 'home'])->name('home');
+Route::get('/services', [LayoutController::class, 'services'])->name('services');
+Route::get('/about', [LayoutController::class, 'about'])->name('about');
+Route::get('/contact', [LayoutController::class, 'contact'])->name('contact');
+Route::get('/blog', [LayoutController::class, 'blog'])->name('blog');
 
 require __DIR__.'/auth.php';
