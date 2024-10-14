@@ -42,9 +42,9 @@ export default function ServicesFeature() {
     <div className="py-12 sm:py-22 border-b border-black border-solid">
         <div className="max-w-auto">
             <div className="section p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
-                 <div className="mb-12">
-                 <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl text-center"> Services </p>
-                 </div>
+                <div className="mb-12">
+                  <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl text-center"> Services </p>
+                </div>
                
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-center text-white">
                     <div className="primary rounded h-56 -mt-10 hover:bg-purple-700">
@@ -72,6 +72,7 @@ export default function ServicesFeature() {
           <p className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Everything you need to empowering your business
           </p>
+          
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">

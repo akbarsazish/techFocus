@@ -5,4 +5,4 @@ export default function FrontLayou({ children }) {
              {children}
         </div>
     );
-}
+} 
