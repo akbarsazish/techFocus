@@ -30,6 +30,6 @@ class LayoutController extends Controller
     }
 
     public function blog(){
-        return inertia('Front/Contact');
+        return inertia('Front/Blog');
     }
 }
