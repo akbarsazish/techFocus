@@ -1,15 +1,13 @@
-import { useState } from 'react'
 import {FaBuilding, FaPhone, FaMobileAlt} from 'react-icons/fa';
 import Header from './Partial/Header'
 import Footer from './Partial/Footer'
 
 export default function Contact() {
-  const [agreed, setAgreed] = useState(false)
-
+ 
   return (
     <>
       <Header />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 isolate tertiary px-6 py-32 sm:py-44 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 isolate tertiary px-6 py-32 sm:py-44 lg:px-12">
           <div className="p-4">
               <h1 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-6xl ">
                   Get in touch
@@ -74,20 +72,7 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2">
-                    <label htmlFor="company" className="block text-sm font-semibold leading-6 text-white">
-                      Company
-                    </label>
-                    <div className="mt-2.5">
-                      <input
-                        id="company"
-                        name="company"
-                        type="text"
-                        autoComplete="organization"
-                        className="block w-full rounded-md border-0 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
+                  
                   <div className="sm:col-span-2">
                     <label htmlFor="email" className="block text-sm font-semibold leading-6 text-white">
                       Email
