@@ -7,6 +7,7 @@ import { Link } from "@inertiajs/react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
       <header className="absolute inset-x-0 top-0 z-50 tertiary">
@@ -29,7 +30,26 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             <Link href={route("home")} className="text-sm font-semibold leading-6 text-white">  Home </Link> 
-            <Link href={route("services")} className="text-sm font-semibold leading-6 text-white">  Services </Link> 
+            <div  className="relative inline-block"
+              onMouseEnter={() => setIsOpen(true)} 
+              onMouseLeave={() => setIsOpen(false)}
+              >
+            <Link className="text-sm font-semibold leading-6 text-white"> Services 
+              {isOpen && (
+                  <div 
+                    onMouseEnter={() => setIsOpen(true)} 
+                    onMouseLeave={() => setIsOpen(false)}
+                   className="absolute z-10 w-40 rounded-md shadow-lg secondary ring-1 ring-black ring-opacity-5">
+                      <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                          <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Web Development</a>
+                          <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Hosting </a>
+                          <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> CEO </a>
+                          <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Marketing </a>
+                      </div>
+                  </div>
+                )}
+             </Link> 
+             </div>
             <Link href={route("about")} className="text-sm font-semibold leading-6 text-white">  About </Link> 
             <Link href={route("contact")} className="text-sm font-semibold leading-6 text-white">  Contact </Link> 
             <Link href={route("blog")} className="text-sm font-semibold leading-6 text-white">  Blog </Link> 

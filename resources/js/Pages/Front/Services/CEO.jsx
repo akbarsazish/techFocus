@@ -12,7 +12,6 @@ const tiers = [
     features: [
       'Unlimited products',
       'Unlimited subscribers',
-
       'Dedicated support representative',
       'Marketing automations',
 
@@ -58,7 +57,6 @@ const tiers = [
     description: 'Dedicated support and infrastructure for your company.',
     features: [
       'Unlimited products',
-      
       'Dedicated support representative',
       'Marketing automations',
       'Custom integrations',
