@@ -12,7 +12,7 @@ export default function Header() {
       <header className="absolute inset-x-0 top-0 z-50 tertiary">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1">
               <span className="sr-only">TechFocus</span>
               <img alt="logo" src="./images/techfocus.png" className="h-8 w-auto" />
             </a>
@@ -60,11 +60,11 @@ export default function Header() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                   <Link href={route("home")} className="text-sm font-semibold leading-6 text-white">  Home </Link> 
-                   <Link href={route("services")} className="text-sm font-semibold leading-6 text-white">  Services </Link> 
-                   <Link href={route("about")} className="text-sm font-semibold leading-6 text-white">  About </Link> 
-                   <Link href={route("contact")} className="text-sm font-semibold leading-6 text-white">  Contact </Link> 
-                   <Link href={route("blog")} className="text-sm font-semibold leading-6 text-white">  Blog </Link> 
+                   <Link href={route("home")} className="text-sm block font-semibold leading-6 text-white">  Home </Link> 
+                   <Link href={route("services")} className="text-sm block font-semibold leading-6 text-white">  Services </Link> 
+                   <Link href={route("about")} className="text-sm block font-semibold leading-6 text-white">  About </Link> 
+                   <Link href={route("contact")} className="text-sm block font-semibold leading-6 text-white">  Contact </Link> 
+                   <Link href={route("blog")} className="text-sm block font-semibold leading-6 text-white">  Blog </Link> 
                 </div>
                 <div className="py-6">
                   <a href="#"
