@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { Link } from "@inertiajs/react";
 
 
@@ -34,7 +35,7 @@ export default function Header() {
               onMouseEnter={() => setIsOpen(true)} 
               onMouseLeave={() => setIsOpen(false)}
               >
-            <Link className="text-sm font-semibold leading-6 text-white"> Services 
+            <Link className="text-sm font-semibold leading-6 text-white"> Services  <ChevronDownIcon aria-hidden="true" className="-mr-1 h-5 w-5 text-gray-400 inline" />
               {isOpen && (
                   <div 
                     onMouseEnter={() => setIsOpen(true)} 
@@ -81,7 +82,27 @@ export default function Header() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                    <Link href={route("home")} className="text-sm block font-semibold leading-6 text-white">  Home </Link> 
-                   <Link href={route("services")} className="text-sm block font-semibold leading-6 text-white">  Services </Link> 
+                   <div  className="relative inline-block"
+                        onMouseEnter={() => setIsOpen(true)} 
+                        onMouseLeave={() => setIsOpen(false)}
+                        >
+                      <Link className="text-sm font-semibold leading-6 text-white"> Services  <ChevronDownIcon aria-hidden="true" className="-mr-1 h-5 w-5 text-gray-400 inline" />
+                        {isOpen && (
+                            <div 
+                              onMouseEnter={() => setIsOpen(true)} 
+                              onMouseLeave={() => setIsOpen(false)}
+                            className="absolute z-10 w-40 rounded-md shadow-lg secondary ring-1 ring-black ring-opacity-5">
+                                <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Web Development</a>
+                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Hosting </a>
+                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> CEO </a>
+                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Marketing </a>
+                                </div>
+                            </div>
+                          )}
+                      </Link> 
+                      </div>
+                   
                    <Link href={route("about")} className="text-sm block font-semibold leading-6 text-white">  About </Link> 
                    <Link href={route("contact")} className="text-sm block font-semibold leading-6 text-white">  Contact </Link> 
                    <Link href={route("blog")} className="text-sm block font-semibold leading-6 text-white">  Blog </Link> 
