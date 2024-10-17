@@ -32,4 +32,16 @@ class LayoutController extends Controller
     public function blog(){
         return inertia('Front/Blog');
     }
+
+    public function webDevelopment(){
+        return inertia('Front/Services/WebDevelopment');
+    }
+
+    public function Hosting(){
+        return inertia('Front/Services/Hosting');
+    }
+
+    public function Ceo(){
+        return inertia('Front/Services/CEO');
+    }
 }

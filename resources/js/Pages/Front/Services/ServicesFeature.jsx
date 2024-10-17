@@ -22,12 +22,7 @@ const features = [
       'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
     icon: SiHostinger,
   },
-  {
-    name: 'Marketing',
-    description:
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-    icon: FcAdvertising,
-  },
+
   {
     name: 'CEO',
     description:
@@ -63,10 +58,7 @@ export default function ServicesFeature() {
                     </div>
                 </div>
             </div>
-          </div>
-
-    
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+         
           <div className="mx-auto max-w-2xl lg:text-center">
             <p className="mt-10 text-3xl font-bold text-white sm:text-4xl">
               Everything you need to empowering your business
