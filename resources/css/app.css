@@ -18,3 +18,11 @@
 .hoverColor {
     background-color: #0000;
 }
+
+.showElement{
+    display: grid;
+}
+
+.hideElement{
+    display: none;
+}

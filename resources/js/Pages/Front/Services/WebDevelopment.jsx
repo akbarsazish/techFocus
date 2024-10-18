@@ -1,7 +1,29 @@
 import Header from "../Partial/Header"
 import FrontLayout from "@/Layouts/FrontLayout"
 import Footer from "../Partial/Footer"
+import { useState } from "react";
 export default function WebDevelopment() {
+  
+  const handleMouseEnter = (event) => {
+    const projectDiv = event.currentTarget; 
+    const projectImg = projectDiv.querySelector(".projectImg");
+    const projectDes = projectDiv.querySelector(".projectDescription");
+
+    projectDiv.classList.add('primary');
+    projectImg.classList.add("hideElement");
+    projectDes.classList.remove("hidden"); 
+};
+
+const handleMouseLeave = (event) => {
+    const projectDiv = event.currentTarget;
+    const projectImg = projectDiv.querySelector(".projectImg");
+    const projectDes = projectDiv.querySelector(".projectDescription");
+
+    projectDiv.classList.remove('primary');
+    projectImg.classList.remove("hideElement"); 
+    projectDes.classList.add("hidden"); 
+};
+
   const webDevs = [
     {
       id: 1,
@@ -40,30 +62,27 @@ export default function WebDevelopment() {
     {
       id: 1,
       imageUrl:'/images/accounting.png',
-      title:'IT specialist',
-      description:'TechFocus is a software group in the field of web-based software.'
+      title:'Web based Accounting',
+      description:'The KasbStar accounting web application offers a user-friendly interface for customers to manage their financial operations. The application includes automated bookkeeping, invoicing and billing, tracking orders, tracking cheque operation, and expense tracking features. It also offers financial reporting and project or inventory management capabilities.'
     },
 
     {
       id: 2,
       imageUrl:'/images/crm.png',
-      title:'Software development specialist',
-      description:' is a software group in the field of web-based software.'
+      title:'CRM',
+      description:'Starfoods demonstrates my web development skills, emphasizing user-friendly interfaces, smooth shopping experiences, secure payments, and quick shipping. Explore my work to see how I can enhance your next project.'
     },
 
     {
       id: 3,
       imageUrl:'/images/ecomerce.png',
-      title:'IT specialist',
-      description:'TechFocus is a software group in the field of web-based software.'
+      title:'E-Commerce',
+      description:'A CRM (Customer Relationship Management) system, streamlines customer data management, and provides analytics. I specialize in creating adaptable CRM solutions that support sales, customer service, and growth, reflecting my skills in developing, data-driven applications.'
     },
-  
   ];
 
 
   return (
-
-
     <>   
         <Header />
           <FrontLayout>
@@ -86,6 +105,7 @@ export default function WebDevelopment() {
                       <div key={webDev.id} className="p-8 rounded tertiary hover:p-7 hover:bg-purple-700 transition-all duration-1000 ease-in-out">
                         <div className="gap-x-4">
                           <img src={webDev.imageUrl} alt="" className="h-44 w-auto mx-auto" />
+                          <br />
                           <a href="#" className="text-white font-black text-xl pt-8">
                             {webDev.title}
                           </a>
@@ -104,13 +124,17 @@ export default function WebDevelopment() {
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3  gap-8 text-center my-16">
                     {projects.map((project)=>(
-                      <div key={project.id} className="p-4 rounded tertiary hover:p-6 hover:bg-purple-700 transition-all duration-1000 ease-in-out">
+                      <div key={project.id} className="p-6 rounded tertiary hover:p-5 hover:bg-purple-700 transition-all duration-1000 ease-in-out projectDiv"
+          
+                       onMouseEnter={handleMouseEnter}
+                       onMouseLeave={handleMouseLeave}>
                         <div className="gap-x-4">
-                          <img src={project.imageUrl} alt="" className="h-44 w-auto mx-auto" />
-                          <a href="#" className="text-white font-extrabold mt-10">
+                          <img src={project.imageUrl} alt="" className="h-44 w-auto mx-auto projectImg" /> 
+                          <br />
+                          <p className="text-white font-extrabold" id="projectTitle">
                             {project.title}
-                          </a>
-                          <p className="mt-5 line-clamp-3 text-sm leading-6 text-white">
+                          </p>
+                          <p className="mt-5 text-sm text-white hidden projectDescription">
                              {project.description}
                           </p>
                         </div>
