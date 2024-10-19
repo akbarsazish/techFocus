@@ -16,7 +16,7 @@
 }
 
 .hoverColor {
-    background-color: #0000;
+    background-color: #7f3de2;
 }
 
 .showElement{
@@ -25,4 +25,11 @@
 
 .hideElement{
     display: none;
+}
+
+.containerWidth {
+    width: 71rem;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 6rem 2rem;
 }

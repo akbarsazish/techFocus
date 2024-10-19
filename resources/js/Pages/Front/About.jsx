@@ -27,8 +27,7 @@ export default function About() {
     <>
         <Header />
           <FrontLayout>
-              <div className="max-w-auto w-full p-4 sm:p-4">
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-24 lg:mt-24 lg:max-w-4xl isolate">
+              <section className="containerWidth relative isolate">
                   <div aria-hidden="true"
                     className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
                   >
@@ -70,9 +69,7 @@ export default function About() {
                           </li>
                         ))}
                     </ul>
-                  </div>
-                 
-              </div>
+              </section>
           </FrontLayout>
         <Footer />
     </>
