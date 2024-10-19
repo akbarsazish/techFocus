@@ -55,4 +55,9 @@ Route::get('/webDev', [LayoutController::class, 'webDevelopment'])->name('webDev
 Route::get('/hosting', [LayoutController::class, 'Hosting'])->name('hosting');
 Route::get('/ceo', [LayoutController::class, 'Ceo'])->name('ceo');
 
+
 require __DIR__.'/auth.php';
+
+Route::fallback(function () {
+    return Inertia::render('Errors/404');
+});

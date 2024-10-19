@@ -29,8 +29,8 @@ const tiers = [
     featured: true,
   },
   {
-    name: 'Hobby1',
-    id: 'tier-hobby1',
+    name: 'Pro',
+    id: 'pro',
     href: '#',
     priceMonthly: '$29',
     description: "The perfect plan if you're just getting started with our product.",

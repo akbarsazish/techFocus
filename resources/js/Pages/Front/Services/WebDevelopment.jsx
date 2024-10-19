@@ -29,7 +29,7 @@ const handleMouseLeave = (event) => {
       id: 1,
       imageUrl:'/images/it.png',
       title:'IT specialist',
-      description:'TechFocus is a software group in the field of web-based software.'
+      description:'TechFocus is a software group in the field of IT.'
     },
     {
       id: 2,
@@ -40,19 +40,19 @@ const handleMouseLeave = (event) => {
     {
       id: 3,
       imageUrl:'/images/assessment.png',
-      title:'IT specialist',
-      description:'TechFocus is a software group in the field of web-based software.'
+      title:'Security and Supervision',
+      description:'TechFocus is a software group in the field of Security and Supervision.'
     },
     {
       id: 4,
       imageUrl:'/images/optimization.png',
-      title:'IT specialist',
+      title:'Optimizatin',
       description:'TechFocus is a software group in the field of web-based software.'
     },
     {
       id: 5,
       imageUrl:'/images/analysiz.png',
-      title:'IT specialist',
+      title:'Data analysts',
       description:'TechFocus is a software group in the field of web-based software.'
     },
     
