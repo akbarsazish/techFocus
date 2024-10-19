@@ -44,4 +44,7 @@ class LayoutController extends Controller
     public function Ceo(){
         return inertia('Front/Services/CEO');
     }
+    public function FAQ(){
+        return inertia('Front/FAQ');
+    }
 }

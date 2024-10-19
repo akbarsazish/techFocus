@@ -54,6 +54,7 @@ Route::get('/blog', [LayoutController::class, 'blog'])->name('blog');
 Route::get('/webDev', [LayoutController::class, 'webDevelopment'])->name('webDev');
 Route::get('/hosting', [LayoutController::class, 'Hosting'])->name('hosting');
 Route::get('/ceo', [LayoutController::class, 'Ceo'])->name('ceo');
+Route::get('/faq', [LayoutController::class, 'FAQ'])->name('faq');
 
 
 require __DIR__.'/auth.php';
