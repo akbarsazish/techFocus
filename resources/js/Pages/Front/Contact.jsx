@@ -19,6 +19,7 @@ export default function Contact() {
             className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
           />
         </div>
+        
         <div className="grid max-w-6xl grid-cols-1 mx-auto md:grid-cols-2 md:divide-x my-16">
           <div className="py-6 md:py-0 md:px-6">
             <h1 className="text-4xl font-bold">Get in touch</h1>
