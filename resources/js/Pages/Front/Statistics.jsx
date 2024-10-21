@@ -19,34 +19,34 @@ export default function Statistics(){
                   <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Techfocus is a group of software developer and IT specialist.</p>
                 </div>
                 <div className="flex flex-wrap -m-4 text-center">
-                <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                    <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                    <FaGlobe className="text-indigo-500 w-12 h-12 mb-3 inline-block" />
-                    <h2 className="title-font font-medium text-3xl">7</h2>
-                    <p className="leading-relaxed">Website </p>
+                    <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+                        <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                            <FaGlobe className="text-indigo-500 w-12 h-12 mb-3 inline-block" />
+                            <h2 className="title-font font-medium text-3xl">7</h2>
+                            <p className="leading-relaxed">Website </p>
+                        </div>
                     </div>
-                </div>
-                <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                    <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                     <FaMobileAlt  className="text-indigo-500 w-12 h-12 mb-3 inline-block" />
-                    <h2 className="title-font font-medium text-3xl">2</h2>
-                    <p className="leading-relaxed"> Mobile Apps</p>
+                    <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+                        <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                            <FaMobileAlt  className="text-indigo-500 w-12 h-12 mb-3 inline-block" />
+                            <h2 className="title-font font-medium text-3xl">2</h2>
+                            <p className="leading-relaxed"> Mobile Apps</p>
+                        </div>
                     </div>
-                </div>
-                <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                    <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                    <FaProductHunt className="text-indigo-500 w-12 h-12 mb-3 inline-block" />
-                    <h2 className="title-font font-medium text-3xl">4</h2>
-                    <p className="leading-relaxed">Web-based Apps</p>
+                    <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+                        <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                            <FaProductHunt className="text-indigo-500 w-12 h-12 mb-3 inline-block" />
+                            <h2 className="title-font font-medium text-3xl">4</h2>
+                            <p className="leading-relaxed">Web-based Apps</p>
+                        </div>
                     </div>
-                </div>
-                <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                    <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                    <FaUserFriends  className="text-indigo-500 w-12 h-12 mb-3 inline-block" />
-                    <h2 className="title-font font-medium text-3xl">410</h2>
-                    <p className="leading-relaxed">Customers</p>
+                    <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+                        <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                            <FaUserFriends  className="text-indigo-500 w-12 h-12 mb-3 inline-block" />
+                            <h2 className="title-font font-medium text-3xl">410</h2>
+                            <p className="leading-relaxed">Customers</p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
          </section>
