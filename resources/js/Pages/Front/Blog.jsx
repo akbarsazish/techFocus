@@ -62,7 +62,7 @@ export default function Blog() {
     <>
     <Header />
      <FrontLayou>
-      <div className="py-32 sm:py-44 isolate">
+      <section className="containerWidth relative isolate">
       <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
         <div style={{
             clipPath:
@@ -71,7 +71,7 @@ export default function Blog() {
           className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
         />
       </div>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 mt-20">
           <div className="mx-auto max-w-2xl lg:mx-0 text-white">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">From the blog</h2>
             <p className="mt-2 text-lg leading-8">
@@ -80,15 +80,12 @@ export default function Blog() {
           </div>
           <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {posts.map((post) => (
-              <article key={post.id} className="flex max-w-xl flex-col items-start justify-between secondary px-4 py-8 rounded-lg">
-                <div className="flex items-center gap-x-4 text-xs">
+              <article key={post.id} className="flex max-w-xl flex-col items-start justify-between tertiary  hover:bg-purple-700 px-4 py-8 rounded-lg">
+                <div className="flex items-center gap-x-2 text-xs">
                   <time dateTime={post.datetime} className="text-white">
                     {post.date}
                   </time>
-                  <a
-                    href={post.category.href}
-                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-black hover:bg-gray-100"
-                  >
+                  <a href={post.category.href}  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium">
                     {post.category.title}
                   </a>
                 </div>
@@ -117,7 +114,7 @@ export default function Blog() {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </FrontLayou>
     <Footer />
     </>
