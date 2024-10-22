@@ -2,20 +2,21 @@ import FrontLayou from "@/Layouts/FrontLayout"
 import Header from "./Partial/Header"
 import Footer from "./Partial/Footer"
 
+
 const posts = [
   {
     id: 1,
     title: 'Boost your conversion rate',
-    href: '#',
+    href: route("blogDetails"),
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
+    category: { title: 'Marketing',   href: route("blogDetails"), },
     author: {
       name: 'Michael Foster',
       role: 'Co-Founder / CTO',
-      href: '#',
+      href: route("blogDetails"),
       imageUrl:
         '/images/teammember.jpg',
     },
@@ -23,16 +24,16 @@ const posts = [
   {
     id: 2,
     title: 'Boost your conversion rate',
-    href: '#',
+    href: route("blogDetails"),
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
-    category: { title: 'CEO', href: '#' },
+    category: { title: 'CEO',   href: route("blogDetails"), },
     author: {
       name: 'Michael Foster',
       role: 'Co-Founder / CTO',
-      href: '#',
+      href: route("blogDetails"),
       imageUrl:
         '/images/teammember.jpg',
     },
@@ -40,21 +41,20 @@ const posts = [
   {
     id: 3,
     title: 'Boost your conversion rate',
-    href: '#',
+    href: route("blogDetails"),
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
-    category: { title: 'hosting', href: '#' },
+    category: { title: 'hosting',   href: route("blogDetails"), },
     author: {
       name: 'Michael Foster',
       role: 'Co-Founder / CTO',
-      href: '#',
+      href: route("blogDetails"),
       imageUrl:
         '/images/teammember.jpg',
     },
   },
-  
 ]
 
 export default function Blog() {
@@ -63,14 +63,14 @@ export default function Blog() {
     <Header />
      <FrontLayou>
       <section className="containerWidth relative isolate">
-      <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
-        <div style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-          className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-        />
-      </div>
+          <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
+            <div style={{
+                clipPath:
+                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              }}
+              className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+            />
+          </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 mt-20">
           <div className="mx-auto max-w-2xl lg:mx-0 text-white">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">From the blog</h2>

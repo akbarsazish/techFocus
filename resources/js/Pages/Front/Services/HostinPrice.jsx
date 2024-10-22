@@ -44,6 +44,19 @@ function classNames(...classes) {
 }
 
 export default function HostingPrice() {
+
+  const tabs = document.querySelectorAll('.tabItem');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            contents.forEach(content => content.classList.add('hidden'));
+            tabs.forEach(t => t.classList.remove('text-blue-600'));
+            document.querySelector(this.getAttribute('href')).classList.remove('hidden');
+            this.classList.add('text-blue-600');
+        });
+    });
+
   return (
     <FrontLayout>
     <section className="relative isolate containerWidth tertiary">
@@ -64,7 +77,7 @@ export default function HostingPrice() {
       <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-white">
          Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document.
       </p>
-      <div className="mx-auto mt-16 grid grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:grid-cols-3">
+      <div className="mx-auto my-20 grid grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:grid-cols-3">
         {tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}
@@ -131,6 +144,32 @@ export default function HostingPrice() {
           </div>
         ))}
       </div>
+
+      <h2 className="text-2xl font-bold text-white sm:text-3xl my-8">Getting to Know More About Hosting Services.</h2>
+      <div className="w-full">
+        <ul className="flex border-b">
+            <li className="-mb-px mr-1">
+                <a className="secondary rounded-t-md inline-block py-2 px-4 tabItem text-blue-600 font-semibold" href="#tab1">Tab 1</a>
+            </li>
+            <li className="-mb-px mr-1">
+                <a className="secondary rounded-t-md inline-block py-2 px-4 tabItem text-gray-600 hover:text-blue-600" href="#tab2">Tab 2</a>
+            </li>
+            <li className="-mb-px mr-1">
+                <a className="secondary rounded-t-md inline-block py-2 px-4 tabItem text-gray-600 hover:text-blue-600" href="#tab3">Tab 3</a>
+            </li>
+        </ul>
+        <div id="tab1" className="tab-content p-4">
+            Content for Tab 1
+        </div>
+        <div id="tab2" className="tab-content p-4 hidden">
+            Content for Tab 2
+        </div>
+        <div id="tab3" className="tab-content p-4 hidden">
+            Content for Tab 3
+        </div>
+</div>
+
+
     </section>
     </FrontLayout>
   )

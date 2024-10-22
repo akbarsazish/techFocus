@@ -51,6 +51,7 @@ Route::get('/services', [LayoutController::class, 'services'])->name('services')
 Route::get('/about', [LayoutController::class, 'about'])->name('about');
 Route::get('/contact', [LayoutController::class, 'contact'])->name('contact');
 Route::get('/blog', [LayoutController::class, 'blog'])->name('blog');
+Route::get('/blogDetails', [LayoutController::class, 'blogDetails'])->name('blogDetails');
 Route::get('/webDev', [LayoutController::class, 'webDevelopment'])->name('webDev');
 Route::get('/hosting', [LayoutController::class, 'Hosting'])->name('hosting');
 Route::get('/ceo', [LayoutController::class, 'Ceo'])->name('ceo');
