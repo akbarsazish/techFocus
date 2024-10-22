@@ -4,6 +4,7 @@ import Header from './Partial/Header'
 import Footer from './Partial/Footer'
 import FrontLayout from "@/Layouts/FrontLayout"
 
+
 export default function Contact() {
  
   return (
@@ -38,6 +39,7 @@ export default function Contact() {
                 <span className="px-2">contact@business.com</span>
               </p>
             </div>
+            <img src="/images/contact.png" alt="" />
           </div>
           <form noValidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
             <label className="block">

@@ -35,7 +35,7 @@ export default function ServicesFeature() {
   return (
     <FrontLayout>
       
-    <div className="py-12 sm:py-22">
+    <div className="py-12 sm:py-22" id="servicesFeature">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="section p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
                 <div className="mb-12">
