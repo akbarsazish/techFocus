@@ -1,5 +1,6 @@
 import FrontLayout from '@/Layouts/FrontLayout';
 import { CheckIcon } from '@heroicons/react/20/solid'
+import AnimatedTabs from './AnimatedTab';
 
 const tiers = [
   {
@@ -52,6 +53,7 @@ export default function HostingPrice() {
         tab.addEventListener('click', function() {
             contents.forEach(content => content.classList.add('hidden'));
             tabs.forEach(t => t.classList.remove('text-blue-600'));
+            tabs.forEach(t => t.classList.add('bg-white'));
             document.querySelector(this.getAttribute('href')).classList.remove('hidden');
             this.classList.add('text-blue-600');
         });
@@ -145,31 +147,7 @@ export default function HostingPrice() {
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold text-white sm:text-3xl my-8">Getting to Know More About Hosting Services.</h2>
-      <div className="w-full">
-        <ul className="flex border-b">
-            <li className="-mb-px mr-1">
-                <a className="secondary rounded-t-md inline-block py-2 px-4 tabItem text-blue-600 font-semibold" href="#tab1">Tab 1</a>
-            </li>
-            <li className="-mb-px mr-1">
-                <a className="secondary rounded-t-md inline-block py-2 px-4 tabItem text-gray-600 hover:text-blue-600" href="#tab2">Tab 2</a>
-            </li>
-            <li className="-mb-px mr-1">
-                <a className="secondary rounded-t-md inline-block py-2 px-4 tabItem text-gray-600 hover:text-blue-600" href="#tab3">Tab 3</a>
-            </li>
-        </ul>
-        <div id="tab1" className="tab-content p-4">
-            Content for Tab 1
-        </div>
-        <div id="tab2" className="tab-content p-4 hidden">
-            Content for Tab 2
-        </div>
-        <div id="tab3" className="tab-content p-4 hidden">
-            Content for Tab 3
-        </div>
-</div>
-
-
+      <AnimatedTabs />
     </section>
     </FrontLayout>
   )
