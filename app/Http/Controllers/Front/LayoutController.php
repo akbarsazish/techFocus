@@ -49,6 +49,14 @@ class LayoutController extends Controller
         return inertia('Front/Services/CEO');
     }
     public function FAQ(){
-        return inertia('Front/FAQ');
+        return inertia('Front/CompanyInfo/FAQ');
+    }
+
+    public function privacyPolicy(){
+        return inertia('Front/CompanyInfo/PrivacyPolicy');
+    }
+
+    public function termsOfServices(){
+        return inertia('Front/CompanyInfo/TermsOfServices');
     }
 }

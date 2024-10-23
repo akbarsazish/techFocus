@@ -54,10 +54,10 @@ export default function Footer(){
                                 <a rel="noopener noreferrer" href="#">Team</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Privacy</a>
+                                <a rel="noopener noreferrer" href={route("policy")}>Privacy</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                                <a rel="noopener noreferrer"  href={route("terms")}>Terms of Service</a>
                             </li>
                         </ul>
                     </div>

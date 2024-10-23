@@ -29,15 +29,14 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth','verified'])->group(function(){
      Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-     Route::resource('project', ProjectController::class);
-
+     
      Route::get('/task', [TaksController::class, 'index'])->name('task.index');
-     Route::get('/task/edite/{project}', [TaksController::class, 'edit'])->name('task.edit');
      Route::post( '/task/destroy/{task}', [TaksController::class, 'destroy'])->name('task.destroy');
-
-     Route::resource('user', UserController::class);
      Route::get('/task/my-tasks', [TaksController::class, 'myTasks'])->name('task.myTasks');
      Route::resource('task', TaksController::class);
+     Route::get('/task/edite/{project}', [TaksController::class, 'edit'])->name('task.edit');
+     Route::resource('project', ProjectController::class);
+     Route::resource('user', UserController::class);
 });
 
 Route::middleware('auth')->group(function () {
@@ -56,6 +55,8 @@ Route::get('/webDev', [LayoutController::class, 'webDevelopment'])->name('webDev
 Route::get('/hosting', [LayoutController::class, 'Hosting'])->name('hosting');
 Route::get('/ceo', [LayoutController::class, 'Ceo'])->name('ceo');
 Route::get('/faq', [LayoutController::class, 'FAQ'])->name('faq');
+Route::get('/policy', [LayoutController::class, 'privacyPolicy'])->name('policy');
+Route::get('/terms', [LayoutController::class, 'termsOfServices'])->name('terms');
 
 require __DIR__.'/auth.php';
 
