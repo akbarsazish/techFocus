@@ -9,35 +9,34 @@ const tabs = [
 ];
 
 const tabContent = {
-  tab1: <motion.div transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-  >
-          <p className="text-2xl font-bold text-white sm:text-3xl my-4">
-            Technical Description
-         </p>
-          <p>Linux hosting is provided using the stable Linux operating system alongside a variety of features for PHP/MySQL applications with optimized service configurations, eliminating the concerns of website owners</p>
-         <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
-         <sapn className="inline">Linux hosting</sapn> <br />
-         <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
-         <sapn className="inline">Linux hosting</sapn> <br />
-         <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
-         <sapn className="inline">Linux hosting</sapn> <br />
-         <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
+  tab1: <motion.div transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}>
+            <p className="text-2xl font-bold text-white sm:text-3xl my-4">
+                Technical Description
+            </p>
+            <p>Linux hosting is provided using the stable Linux operating system alongside a variety of features for PHP/MySQL applications with optimized service configurations, eliminating the concerns of website owners</p>
+            <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
+            <sapn className="inline">Linux hosting</sapn> <br />
+            <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
+            <sapn className="inline">Linux hosting</sapn> <br />
+            <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
+            <sapn className="inline">Linux hosting</sapn> <br />
+            <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
         
         </motion.div>,
   tab2: <motion.div transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}>
-          <p className="text-2xl font-bold text-white sm:text-3xl my-4">
-            Technical Description
-         </p>
-        <p>Windows hosting at Mihan Hosting is offered with the best quality and highest uptime. The operating system for this hosting is Windows Server 2008 and 2012, supporting all components of programming languages like ASP, ASP.NET, etc. If your website is designed with ASP, it cannot be supported by Linux hosting and you must use Windows hosting</p>
-        <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
-        <sapn className="inline">Windows hosting</sapn> <br />
-        <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
-        <sapn className="inline">Windows hosting</sapn> <br />
-        <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
-        <sapn className="inline">Windows hosting</sapn> <br />
-        <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
-        
+            <p className="text-2xl font-bold text-white sm:text-3xl my-4">
+              Technical Description
+            </p>
+            <p>Windows hosting at Mihan Hosting is offered with the best quality and highest uptime. The operating system for this hosting is Windows Server 2008 and 2012, supporting all components of programming languages like ASP, ASP.NET, etc. If your website is designed with ASP, it cannot be supported by Linux hosting and you must use Windows hosting</p>
+            <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
+            <sapn className="inline">Windows hosting</sapn> <br />
+            <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
+            <sapn className="inline">Windows hosting</sapn> <br />
+            <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
+            <sapn className="inline">Windows hosting</sapn> <br />
+            <CheckIcon aria-hidden="true"  className=" h-6 w-5 flex-none inline mx-2" /> 
         </motion.div>,
+        
   tab3: <motion.div transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}>
         <p className="text-2xl font-bold text-white sm:text-3xl my-4">
         Technical Description

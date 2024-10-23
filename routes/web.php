@@ -57,7 +57,6 @@ Route::get('/hosting', [LayoutController::class, 'Hosting'])->name('hosting');
 Route::get('/ceo', [LayoutController::class, 'Ceo'])->name('ceo');
 Route::get('/faq', [LayoutController::class, 'FAQ'])->name('faq');
 
-
 require __DIR__.'/auth.php';
 
 Route::fallback(function () {

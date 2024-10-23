@@ -1,17 +1,34 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { useState } from "react";
 import { TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP } from "@/constant";
 import { Head, Link } from "@inertiajs/react";
 
+
+import { UserData } from "./Chart/Data";
+import BarChart from "./Chart/BarChart";
+import PieChart from "./Chart/PieChart";
+import LineChart from "./Chart/LineChart";
+
+
 export default function Dashboard({
-  auth,
-  totalPendingTasks,
-  myPendingTasks,
-  totalProgressTasks,
-  myProgressTasks,
-  totalCompletedTasks,
-  myCompletedTasks,
-  activeTasks,
+  auth,totalPendingTasks, myPendingTasks,
+  totalProgressTasks, myProgressTasks, totalCompletedTasks,
+  myCompletedTasks,activeTasks,
 }) {
+
+
+  const [userData, setUserData] = useState({
+    labels: UserData.map((data) => data.year),
+    datasets: [
+      {
+        label: "Projects per year",
+        data: UserData.map((data) => data.userGain),
+        backgroundColor: ["green", "purple", "blue"],
+      },
+    ],
+  });
+
+
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -107,6 +124,19 @@ export default function Dashboard({
               </table>
             </div>
           </div>
+          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg my-4">
+           <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-8 align-center text-center lg:justify-center md:justify-center mx-auto mt-2 rounded-lg p-2">
+              <div className="rounded border">
+                <BarChart chartData={userData} />
+              </div>
+              <div className="rounded border">
+                <LineChart chartData={userData} />
+              </div>
+              <div className="rounded border">
+                <PieChart chartData={userData} />
+              </div>
+            </div>
+         </div>
         </div>
       </div>
     </AuthenticatedLayout>
