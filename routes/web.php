@@ -21,17 +21,15 @@ use Inertia\Inertia;
 |
 */
 
-Route::redirect('/', 'dashboard');
+Route::get('/', function () {
+    return innertia('home');
+})->name('home');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-});
 
 Route::middleware(['auth','verified'])->group(function(){
      Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-     
      Route::get('/task', [TaksController::class, 'index'])->name('task.index');
-     Route::post( '/task/destroy/{task}', [TaksController::class, 'destroy'])->name('task.destroy');
+     Route::post('/task/destroy/{task}', [TaksController::class, 'destroy'])->name('task.destroy');
      Route::get('/task/my-tasks', [TaksController::class, 'myTasks'])->name('task.myTasks');
      Route::resource('task', TaksController::class);
      Route::get('/task/edite/{project}', [TaksController::class, 'edit'])->name('task.edit');
@@ -52,8 +50,8 @@ Route::get('/contact', [LayoutController::class, 'contact'])->name('contact');
 Route::get('/blog', [LayoutController::class, 'blog'])->name('blog');
 Route::get('/blogDetails', [LayoutController::class, 'blogDetails'])->name('blogDetails');
 Route::get('/webDev', [LayoutController::class, 'webDevelopment'])->name('webDev');
-Route::get('/hosting', [LayoutController::class, 'Hosting'])->name('hosting');
-Route::get('/ceo', [LayoutController::class, 'Ceo'])->name('ceo');
+Route::get('/hosting', [LayoutController::class, 'hosting'])->name('hosting');
+Route::get('/ceo', [LayoutController::class, 'ceo'])->name('ceo');
 Route::get('/faq', [LayoutController::class, 'FAQ'])->name('faq');
 Route::get('/policy', [LayoutController::class, 'privacyPolicy'])->name('policy');
 Route::get('/terms', [LayoutController::class, 'termsOfServices'])->name('terms');

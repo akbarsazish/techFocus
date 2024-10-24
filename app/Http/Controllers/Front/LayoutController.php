@@ -41,11 +41,11 @@ class LayoutController extends Controller
         return inertia('Front/Services/WebDevelopment');
     }
 
-    public function Hosting(){
+    public function hosting(){
         return inertia('Front/Services/Hosting');
     }
 
-    public function Ceo(){
+    public function ceo(){
         return inertia('Front/Services/CEO');
     }
     public function FAQ(){
