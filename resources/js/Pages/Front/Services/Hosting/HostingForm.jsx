@@ -37,7 +37,7 @@ export default function HostingForm() {
           
             <div className="max-w-7xl mx-auto sm:px-2 lg:px-4 border border-gray-500 rounded-lg">
                 <div className="flex flex-col md:flex-row">
-                 <div className="w-full md:basis-3/4">
+                 <div className="w-full md:basis-3/4 h-screen [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] overflow-y-scroll">
                    <div className="overflow-hidden shadow-sm sm:rounded-lg">
                         <form className="p-4 sm:p-8 shadow">
                             <div className="p-2 border-b border-indigo-500">
@@ -188,15 +188,26 @@ export default function HostingForm() {
                             <span className="h-10 w-10 bg-indigo-500 inline-block p-1 text-center rounded-full text-2xl text-white"> 3 </span>
                             <span className="text-white mx-2 text-2xl font-bold"> Billing </span>
                         </div>
+                        <div className="flex flex-col md:flex-row mt-4">
+                             <div className="w-full md:basis-2/4 px-2">
+                             <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
+                                <TextInput id="bordered-radio-1" type="radio" value="" name="bordered-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                <label htmlFor="bordered-radio-1" className="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Credit Card</label>
+                            </div>
+                             </div>
+                             <div className="w-full md:basis-2/4 px-2">
+                                <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
+                                    <TextInput checked id="bordered-radio-2" type="radio" value="" name="bordered-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    <label htmlFor="bordered-radio-2" className="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">PayPal</label>
+                                </div>
+                             </div>
+                        </div>
 
                         <div className="mt-4 text-right">
-                            <button 
-                            className="bg-red-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 rounded mx-4"
-                            >
-                            Cancel
+                            <button className="bg-red-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 rounded mx-4">
+                              Cancel
                             </button>    
-                            <button 
-                            className="bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 rounded">
+                            <button className="bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 rounded">
                                Submit
                             </button>
                         </div>
