@@ -38,15 +38,15 @@ class LayoutController extends Controller
     }
 
     public function webDevelopment(){
-        return inertia('Front/Services/WebDevelopment');
+        return inertia('Front/Services/Web/WebDevelopment');
     }
 
     public function hosting(){
-        return inertia('Front/Services/Hosting');
+        return inertia('Front/Services/Hosting/Hosting');
     }
 
     public function ceo(){
-        return inertia('Front/Services/CEO');
+        return inertia('Front/Services/Ceo/CEO');
     }
     public function FAQ(){
         return inertia('Front/CompanyInfo/FAQ');

@@ -6,7 +6,7 @@ const tiers = [
   {
     name: 'Hobby',
     id: 'tier-hobby',
-    href: '#',
+    href: route('hostingForm'),
     priceMonthly: '$29',
     description: "The perfect plan if you're just getting started with our product.",
     features: ['25 products', 'Up to 10,000 subscribers', 'Advanced analytics', '24-hour support response time'],
@@ -77,7 +77,7 @@ export default function HostingPrice() {
         </p>
       </div>  
       <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-white">
-         Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document.
+       TechFocus Hosting has a hosting plan for everyone. Whether you are a beginner or an expert, our plans are created with our customers’ specific needs in mind.
       </p>
       <div className="mx-auto my-20 grid grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:grid-cols-3">
         {tiers.map((tier, tierIdx) => (
@@ -125,7 +125,7 @@ export default function HostingPrice() {
               {tier.features.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
                   <CheckIcon aria-hidden="true"
-                    className={classNames(tier.featured ? 'text-indigo-400' : 'text-indigo-600', 'h-6 w-5 flex-none')}
+                    className={classNames(tier.featured ? 'text-white' : 'text-text-green', 'h-6 w-6 p-1 flex-none bg-indigo-500 rounded-full')}
                   />
                   {feature}
                 </li>

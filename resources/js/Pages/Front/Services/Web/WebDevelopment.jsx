@@ -1,6 +1,6 @@
-import Header from "../Partial/Header"
+import Header from "../../Partial/Header"
 import FrontLayout from "@/Layouts/FrontLayout"
-import Footer from "../Partial/Footer"
+import Footer from "../../Partial/Footer"
 import { useState } from "react";
 export default function WebDevelopment() {
   

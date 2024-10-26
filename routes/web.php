@@ -6,6 +6,7 @@ use App\Http\Controllers\TaksController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Front\LayoutController;
+use App\Http\Controllers\Front\HostingController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -55,6 +56,8 @@ Route::get('/ceo', [LayoutController::class, 'ceo'])->name('ceo');
 Route::get('/faq', [LayoutController::class, 'FAQ'])->name('faq');
 Route::get('/policy', [LayoutController::class, 'privacyPolicy'])->name('policy');
 Route::get('/terms', [LayoutController::class, 'termsOfServices'])->name('terms');
+
+Route::get('/hostingForm', [HostingController::class, 'hostingForm'])->name('hostingForm');
 
 require __DIR__.'/auth.php';
 
