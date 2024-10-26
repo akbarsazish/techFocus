@@ -1,7 +1,7 @@
+import { useState } from "react";
 import FrontLayout from "@/Layouts/FrontLayout"
 import Header from "../../Partial/Header"
 import Footer from '../../Partial/Footer';
-
 import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
 import SelectInput from "@/Components/SelectInput";
@@ -9,6 +9,11 @@ import TextInput from "@/Components/TextInput";
 
 
 export default function HostingForm() {
+
+    const [paymentMethod, setPaymentMethod] = useState('paypal');
+    const handleChange = (event) => {
+        setPaymentMethod(event.target.value);
+    };
 
       const onSubmit = (e) => {
         e.preventDefault();
@@ -191,19 +196,80 @@ export default function HostingForm() {
                         <div className="flex flex-col md:flex-row mt-4">
                              <div className="w-full md:basis-2/4 px-2">
                                 <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                                    <TextInput id="bordered-radio-1" type="radio" value="" name="bordered-radio" className="w-4 h-4 focus:ring-white dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    <TextInput
+                                     checked={paymentMethod === 'creditCard'}
+                                     onChange={handleChange}
+                                    id="bordered-radio-1" 
+                                    type="radio" value="creditCard" 
+                                    name="bordered-radio" 
+                                    className="w-4 h-4 focus:ring-white dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                     <label htmlFor="bordered-radio-1" className="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Credit Card</label>
                                 </div>
                              </div>
                              <div className="w-full md:basis-2/4 px-2">
                                 <div className="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-                                    <TextInput checked id="bordered-radio-2" type="radio" value="" name="bordered-radio" className="w-4 h-4 focus:ring-white dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    <TextInput
+                                    checked={paymentMethod === 'paypal'}
+                                    onChange={handleChange}
+                                    id="bordered-radio-2" 
+                                    type="radio" value="paypal" 
+                                    name="bordered-radio" 
+                                    className="w-4 h-4 focus:ring-white dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                     <label htmlFor="bordered-radio-2" className="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">PayPal</label>
                                 </div>
                              </div>
                         </div>
-                        <div className="flex min-h-32 border-2 my-4 rounded-lg border-dashed border-gray-300">
-
+                        <div className="flex min-h-44 border-2 my-4 rounded-lg border-dashed border-gray-300">
+                        {paymentMethod === 'paypal' && (
+                            <div className="p-4">
+                                <p className="text-white">To complete payment with PayPal, choose an existing linked PayPal account or link a new account.</p>
+                                    <TextInput id="link_paypal"
+                                    type="text"
+                                    name="name"
+                                    className="mt-1 block w-full"
+                                    isFocused={true}
+                                    disabled
+                                    placeholder="Link a New PayPal Accoun"
+                                    /> 
+                            </div>
+                            )}
+                            {paymentMethod === 'creditCard' && (
+                            <div className="p-4">
+                                <h2 className="text-lg font-bold text-white mb-3">  Enter New Card Information Below </h2>
+                                <div className="flex flex-col md:flex-row mt-4">
+                                    <div className="w-full md:basis-2/3 px-2">
+                                        <InputLabel htmlFor="card_number" value="Card Number" />
+                                        <TextInput id="card_number"
+                                        type="text"
+                                        name="name"
+                                        className="mt-1 block w-full"
+                                        placeholder="1234 1234 1234 1234"
+                                        isFocused={true}
+                                        />
+                                    </div>
+                                    <div className="w-full md:basis-1/3 px-2">
+                                        <InputLabel htmlFor="card_number" value="Expiry Date" />
+                                        <TextInput id="card_number"
+                                        type="text"
+                                        name="name"
+                                        className="mt-1 block w-full"
+                                        placeholder="MM-YY"
+                                        isFocused={true}
+                                        />
+                                    </div>
+                                    <div className="w-full md:basis-1/3 px-2">
+                                        <InputLabel htmlFor="cvv" value="CVV/CVC2" />
+                                        <TextInput id="cvv"
+                                        type="text"
+                                        name="name"
+                                        className="mt-1 block w-full"
+                                        placeholder="CVV/CVC2"
+                                        isFocused={true}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            )}
                         </div>
 
                         <div className="mt-4 text-right">
