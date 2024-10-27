@@ -92,10 +92,9 @@ export default function Header() {
                               onMouseLeave={() => setIsOpen(false)}
                             className="absolute z-10 w-40 rounded-md shadow-lg secondary ring-1 ring-black ring-opacity-5">
                                 <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Web Development</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Hosting </a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> CEO </a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Marketing </a>
+                                  <Link href={route("webDev")} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Web Development</Link>
+                                  <Link href={route('hosting')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Hosting </Link>
+                                  <Link href={route('ceo')} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> CEO </Link>
                                 </div>
                             </div>
                           )}

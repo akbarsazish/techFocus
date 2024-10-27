@@ -85,10 +85,7 @@ export default function HostingPrice() {
             key={tier.id}
             className={classNames(
               tier.featured ? 'relative bg-gray-900 shadow-2xl' : 'bg-white/60 sm:mx-8 lg:mx-0',
-              tier.featured
-                ? ''
-                : tierIdx === 0
-                  ? 'rounded sm:rounded-b-none lg:rounded lg:rounded-tr-none'
+              tier.featured ? '' : tierIdx === 0 ? 'rounded sm:rounded-b-none lg:rounded lg:rounded-tr-none'
                   : 'sm:rounded-t-none lg:rounded-bl-none lg:rounded',
               'rounded p-8 ring-1 ring-gray-900/10 sm:p-10',
             )}
