@@ -40,9 +40,9 @@ export default function HostingForm() {
                 </p>
             </div> 
           
-            <div className="max-w-7xl mx-auto sm:px-2 lg:px-4 border border-gray-500 rounded-lg">
+            <div className="max-w-7xl mx-auto sm:px-2 lg:px-4">
                 <div className="flex flex-col md:flex-row">
-                 <div className="w-full md:basis-3/4 h-screen [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] overflow-y-scroll">
+                 <div className="w-full md:basis-3/4 primary rounded-lg [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] overflow-y-scroll">
                    <div className="overflow-hidden shadow-sm sm:rounded-lg">
                         <form className="p-4 sm:p-8 shadow">
                             <div className="p-2 border-b border-indigo-500">
@@ -284,11 +284,11 @@ export default function HostingForm() {
                     </div>
                 </div>
                 <div className="w-full md:basis-1/4 relative">
-                    <div className="shadow pt-8 tertiary rounded-lg sticky top-44">
-                        <p className="m-2 text-xl font-bold tracking-tight text-white sm:text-2xl">
-                          Product and Service Summary
+                    <div className="pt-8 primary rounded-lg sticky top-44">
+                        <p className="my-2 text-xl text-center text-white sm:text-2xl">
+                          Service Summary
                         </p>
-                        <div className="m-2">
+                        <div className="m-4">
                             <InputLabel htmlFor="task_project_id" value="romotion Billing Cycle" />
                             <SelectInput
                             name="project_id"
