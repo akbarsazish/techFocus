@@ -283,31 +283,32 @@ export default function HostingForm() {
                         </form>
                     </div>
                 </div>
-                <div className="w-full md:basis-1/4 md:border-l-2 border-gray-500">
-                    <p className="m-2 text-xl font-bold tracking-tight text-white sm:text-2xl">
-                       Product and Service Summary
-                    </p>
-                    <div className="m-2">
-                        <InputLabel htmlFor="task_project_id" value="romotion Billing Cycle" />
-                        <SelectInput
-                        name="project_id"
-                        id="task_project_id"
-                        className="mt-1 block w-full py-1" >
-                            <option value="">1 Month $23.99/mo </option>
-                            <option value="">12 Months $17.99/mo ($215.88)</option>
-                            <option value="">24 Months $14.99/mo ($359.76)</option>
-                            <option value="">36 Months $11.99/mo ($431.64)</option>
-                        </SelectInput>
-                    </div>
-                    <div className="p-4">
-                        <div className="h-px bg-gray-300"></div>
+                <div className="w-full md:basis-1/4 relative">
+                    <div className="shadow pt-8 tertiary rounded-lg sticky top-44">
+                        <p className="m-2 text-xl font-bold tracking-tight text-white sm:text-2xl">
+                          Product and Service Summary
+                        </p>
+                        <div className="m-2">
+                            <InputLabel htmlFor="task_project_id" value="romotion Billing Cycle" />
+                            <SelectInput
+                            name="project_id"
+                            id="task_project_id"
+                            className="mt-1 block w-full py-1" >
+                                <option value="">1 Month $23.99/mo </option>
+                                <option value="">12 Months $17.99/mo ($215.88)</option>
+                                <option value="">24 Months $14.99/mo ($359.76)</option>
+                                <option value="">36 Months $11.99/mo ($431.64)</option>
+                            </SelectInput>
+                        </div>
+                        <div className="p-4">
+                            <div className="h-px bg-gray-300"></div>
 
-                        <div className="flex flex-col md:flex-row text-white">
-                          <div className="w-full md:basis-2/4 font-bold"> Total: </div>
-                          <div className="w-full md:basis-2/4 text-end"> $399.9 </div>
+                            <div className="flex flex-col md:flex-row text-white">
+                            <div className="w-full md:basis-2/4 font-bold"> Total: </div>
+                            <div className="w-full md:basis-2/4 text-end"> $399.9 </div>
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
          </div>
